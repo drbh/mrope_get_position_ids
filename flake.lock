@@ -1,0 +1,97 @@
+{
+  "nodes": {
+    "flake-compat": {
+      "locked": {
+        "lastModified": 1733328505,
+        "narHash": "sha256-NeCCThCEP3eCl2l/+27kNNK7QrwZB1IJCrXfrbv5oqU=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "ff81ac966bb2cae68946d5ed5fc4994f96d0ffec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "kernel-builder": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1738830746,
+        "narHash": "sha256-WwMzQXiHnkgb+4xEn3mlTOLJ9/7rInn+SJdaC/rQr3M=",
+        "ref": "refs/heads/main",
+        "rev": "21c056ac3575e78d4228e9ed7924cfbe987398d6",
+        "revCount": 73,
+        "submodules": true,
+        "type": "git",
+        "url": "git+ssh://git@github.com/huggingface/kernel-builder"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "git+ssh://git@github.com/huggingface/kernel-builder"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1738247409,
+        "narHash": "sha256-F72dKl9Na6/2N+garOm9qCXPa92GzR8eYSuDra6kbjY=",
+        "owner": "danieldk",
+        "repo": "nixpkgs",
+        "rev": "358f57074b70e3ee9e1dc118151a4f6f81fcd3bb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "danieldk",
+        "ref": "cuda-12.6-for-kernel-builder",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "kernel-builder": "kernel-builder"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
