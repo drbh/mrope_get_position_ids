@@ -1,7 +1,7 @@
 name: Sync to Hugging Face hub
 on:
   push:
-    branches: [ main ]  # Change this to your default branch if different
+    branches: [ main ]
 
 jobs:
   sync-to-hub:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Important for complete history
+          fetch-depth: 0
           lfs: true
 
       - name: Push to hub
@@ -19,12 +19,11 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "github-actions"
           
-          # Configure Hugging Face repository
-          git remote add hub git@hf.co:kernels-community/mrope_get_position_ids
+          # Configure Hugging Face repository using HTTPS
+          git remote add hub https://huggingface.co/kernels-community/mrope_get_position_ids
           
-          # Fetch from Hugging Face to ensure we have the latest state
+          # Fetch from Hugging Face
           git fetch hub || true
           
-          # Push to Hugging Face, preserving history
-          # The '+' before the ref forces the update only if necessary while preserving history
+          # Push to Hugging Face using HTTPS with token
           git push https://$HF_TOKEN@huggingface.co/kernels-community/mrope_get_position_ids +main:main
