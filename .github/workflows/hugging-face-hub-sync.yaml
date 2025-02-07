@@ -19,7 +19,13 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          huggingface-cli login --token $HF_TOKEN
+          # Login to Hugging Face and add git credentials
+          huggingface-cli login --token $HF_TOKEN --add-to-git-credential
+          
+          # Configure git
           git config --global user.email "actions@github.com"
           git config --global user.name "github-actions"
-          git push https://huggingface.co/kernels-community/mrope_get_position_ids.git main
+          
+          # Add remote and push
+          git remote add hub "https://huggingface.co/kernels-community/mrope_get_position_ids.git"
+          git push hub main
