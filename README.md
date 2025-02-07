@@ -1,3 +1,9 @@
+---
+tags:
+- kernel
+- mrope
+---
+
 # mrope get position ids
 
 This repo is a small rewrite of the [get_position_ids](test/reference.py) function that simply returns the position ids for multimodal input ids.
